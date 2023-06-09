@@ -2,24 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'magicball.dart';
 import 'words.dart';
+import 'quizzler.dart';
 
-
-// MagicBallPage magicBallPage = MagicBallPage();
-// void main() {
-//   return runApp(
-//     MaterialApp(
-//       home: Scaffold(
-//         backgroundColor: Colors.red,
-//         appBar: AppBar(
-//           title: const Text('Dicee'),
-//           backgroundColor: Colors.red,
-//         ),
-//         body: DicePage(),
-//
-//       ),
-//     ),
-//   );
-// }
 
 
 // void main() {
@@ -31,21 +15,45 @@ import 'words.dart';
 //           title: const Text('Dicee'),
 //           backgroundColor: Colors.blueAccent.shade700,
 //         ),
-//         body:ListView(
-//           // mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             DicePage(),
-//             DicePage(),
-//             DicePage(),
-//             MagicBallPage(),
-//             WordsPage()
-//           ],
+//         body: ListView.builder(
+//           itemCount: 3,
+//           itemBuilder: (context, index) {
+//             return index == 0 ? DicePage() : index == 1 ? MagicBallPage() : WordsPage() ;
+//           },
 //         ),
 //       ),
 //     ),
 //   );
 // }
-//
+
+// void main() {
+//   runApp(
+//     MaterialApp(
+//       home: Scaffold(
+//         backgroundColor: Colors.blueAccent,
+//         appBar: AppBar(
+//           title: const Text('Dicee'),
+//           backgroundColor: Colors.blueAccent.shade700,
+//         ),
+//         body: ListView.builder(
+//           itemCount: 4,
+//           itemBuilder: (context, index) {
+//             if (index == 0) {
+//               return DicePage();
+//             } else if (index == 1) {
+//               return MagicBallPage();
+//             } else if (index == 2) {
+//               return WordsPage();
+//             } else {
+//               return QuizPage();
+//             }
+//           },
+//         ),
+//       ),
+//     ),
+//   );
+// }
+
 void main() {
   runApp(
     MaterialApp(
@@ -56,15 +64,32 @@ void main() {
           backgroundColor: Colors.blueAccent.shade700,
         ),
         body: ListView.builder(
-          itemCount: 3,
+          itemCount: 4, // Increased the itemCount to accommodate the button
           itemBuilder: (context, index) {
-            return index == 0 ? DicePage() : index == 1 ? MagicBallPage() : WordsPage();
+            if (index == 0) {
+              return DicePage();
+            } else if (index == 1) {
+              return MagicBallPage();
+            } else if (index == 2) {
+              return WordsPage();
+            } else {
+              return ElevatedButton(
+                child: Text('Go to Quiz Page'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => QuizPage()),
+                  );
+                },
+              );
+            }
           },
         ),
       ),
     ),
   );
 }
+
 
 class DicePage extends StatefulWidget {
   const DicePage({Key? key}) : super(key: key);
@@ -167,5 +192,52 @@ class _DicePageState extends State<DicePage> {
 //   }
 //
 //
+// }
+//
+
+
+
+
+
+// MagicBallPage magicBallPage = MagicBallPage();
+// void main() {
+//   return runApp(
+//     MaterialApp(
+//       home: Scaffold(
+//         backgroundColor: Colors.red,
+//         appBar: AppBar(
+//           title: const Text('Dicee'),
+//           backgroundColor: Colors.red,
+//         ),
+//         body: DicePage(),
+//
+//       ),
+//     ),
+//   );
+// }
+
+
+// void main() {
+//   runApp(
+//     MaterialApp(
+//       home: Scaffold(
+//         backgroundColor: Colors.blueAccent,
+//         appBar: AppBar(
+//           title: const Text('Dicee'),
+//           backgroundColor: Colors.blueAccent.shade700,
+//         ),
+//         body:ListView(
+//           // mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             DicePage(),
+//             DicePage(),
+//             DicePage(),
+//             MagicBallPage(),
+//             WordsPage()
+//           ],
+//         ),
+//       ),
+//     ),
+//   );
 // }
 //
