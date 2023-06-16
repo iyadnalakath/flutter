@@ -3,6 +3,8 @@ import 'dart:math';
 import 'magicball.dart';
 import 'words.dart';
 import 'quizzler.dart';
+import 'story.dart';
+import 'bmi_calculator.dart';
 
 
 
@@ -64,7 +66,7 @@ void main() {
           backgroundColor: Colors.blueAccent.shade700,
         ),
         body: ListView.builder(
-          itemCount: 4, // Increased the itemCount to accommodate the button
+          itemCount: 6, // Increased the itemCount to accommodate the button
           itemBuilder: (context, index) {
             if (index == 0) {
               return DicePage();
@@ -72,7 +74,7 @@ void main() {
               return MagicBallPage();
             } else if (index == 2) {
               return WordsPage();
-            } else {
+            } else if (index == 3){
               return ElevatedButton(
                 child: Text('Go to Quiz Page'),
                 onPressed: () {
@@ -82,6 +84,26 @@ void main() {
                   );
                 },
               );
+            } else if (index == 4){
+              return ElevatedButton(
+                child: Text('Go to BMI Calculator'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BMICalculator()),
+                  );
+                },
+              );
+            }else {
+            return ElevatedButton(
+            child: Text('Go to Story  Page'),
+            onPressed: () {
+            Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => StoryPage()),
+            );
+            },
+            );
             }
           },
         ),
