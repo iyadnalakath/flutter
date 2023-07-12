@@ -15,6 +15,7 @@ dependencies:
   audioplayers: ^4.1.0
   english_words: ^4.0.0
   flutter_platform_alert: ^0.4.0
+  font_awesome_flutter: ^10.4.0
 
 
 dev_dependencies:

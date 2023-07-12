@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-import 'magicball.dart';
-import 'words.dart';
-import 'quizzler.dart';
-import 'story.dart';
-import 'bmi_calculator.dart';
+import 'screens/magicball.dart';
+import 'screens/words.dart';
+import 'screens/quizzler.dart';
+import 'screens/story.dart';
+import 'screens/bmi_calculator.dart';
 
 
 

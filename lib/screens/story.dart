@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'story_brain.dart';
+import '../components/story_brain.dart';
 
 StoryBrain storyBrain = StoryBrain();
 
