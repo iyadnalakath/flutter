@@ -5,6 +5,7 @@ import 'screens/words.dart';
 import 'screens/quizzler.dart';
 import 'screens/story.dart';
 import 'screens/bmi_calculator.dart';
+import 'screens/loading_screen.dart';
 
 
 
@@ -66,7 +67,7 @@ void main() {
           backgroundColor: Colors.blueAccent.shade700,
         ),
         body: ListView.builder(
-          itemCount: 6, // Increased the itemCount to accommodate the button
+          itemCount: 7, // Increased the itemCount to accommodate the button
           itemBuilder: (context, index) {
             if (index == 0) {
               return DicePage();
@@ -91,6 +92,16 @@ void main() {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => BMICalculator()),
+                  );
+                },
+              );
+            }else if (index == 5){
+              return ElevatedButton(
+                child: Text('Go to wheather app'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoadingScreen()),
                   );
                 },
               );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../constants.dart';
+import '../utilities/constants.dart';
 import '../components/reusable_cart.dart';
 import '../components/bottom_button.dart';
 

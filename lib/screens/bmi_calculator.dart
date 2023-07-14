@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import '../components/icon_content.dart';
 import '../components/reusable_cart.dart';
-import '../constants.dart';
+import '../utilities/constants.dart';
 import 'results_page.dart';
 import '../components/bottom_button.dart';
 import '../components/round_icon_button.dart';
