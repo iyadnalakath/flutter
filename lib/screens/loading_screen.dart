@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:dice/services/location.dart';
-import 'package:dice/services/networking.dart';
+import 'package:dice/services/weather.dart';
 import 'location_screen.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-const apiKey = 'e45e7eeafff52fd932afcd432a857f2d';
+
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -72,13 +71,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   void getLocationData() async {
-    Location location = Location();
-    await location.getCurrentLocation();
-    Uri apiUrl = Uri.parse(
-        'https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=$apiKey&units=metric');
 
-    NetworkHelper networkHelper = NetworkHelper(apiUrl);
-    var weatherData = await networkHelper.getData();
+    var weatherData = await WeatherModel().getLocationweather();
 
     if (weatherData != null) {
       // Weather data is available, proceed with displaying the location screen

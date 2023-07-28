@@ -6,6 +6,7 @@ import 'screens/quizzler.dart';
 import 'screens/story.dart';
 import 'screens/bmi_calculator.dart';
 import 'screens/loading_screen.dart';
+import 'screens/price_screen.dart';
 
 
 
@@ -67,7 +68,7 @@ void main() {
           backgroundColor: Colors.blueAccent.shade700,
         ),
         body: ListView.builder(
-          itemCount: 7, // Increased the itemCount to accommodate the button
+          itemCount: 8, // Increased the itemCount to accommodate the button
           itemBuilder: (context, index) {
             if (index == 0) {
               return DicePage();
@@ -102,6 +103,16 @@ void main() {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => LoadingScreen()),
+                  );
+                },
+              );
+            }else if (index == 6){
+              return ElevatedButton(
+                child: Text('Go to coin'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PriceScreen()),
                   );
                 },
               );
